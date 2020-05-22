@@ -23,6 +23,7 @@ require('./routes/users.routes')(app)
 
 require('./routes/pirate.routes')(app);
 
+app.all('*', (_,res) => res.sendFile(__dirname + '/client/build/index.html'));
 app.listen(8000, () => {
     console.log("Listening at Port 8000")
 })
